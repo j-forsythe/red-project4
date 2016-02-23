@@ -3,10 +3,10 @@
 
   angular
     .module('red')
-    .controller('MainCtrl', MainCtrl);
+    .controller('CheckinCtrl', CheckinCtrl);
 
   /** @ngInject */
-  function MainCtrl($scope) {
+  function CheckinCtrl($scope) {
       $scope.description = 'Angular Seed Application';
   }
 

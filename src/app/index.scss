@@ -5,6 +5,11 @@
 // bower:scss
 // endbower
 
+@import "./checkin/check-in";
+@import "./encounters/encounters";
+@import "./report/report";
+@import "./report/report-filed";
+
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
 
 $red-color: #ed4343;
