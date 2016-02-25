@@ -1,0 +1,16 @@
+<div class="encounters">
+  <h1>Recent Encounters</h1>
+    <p>See an Alien? Report it!</p>
+    <ul >
+      <li ng-repeat="encounter in encounters">
+        {{ encounter.date }} -{{ encounter.atype }}
+        <span>{{ encounter.action }}</span>
+      </li>
+    </ul>
+
+  <footer>
+    <div>
+      <h1>Report Encounter</h1>
+    </div>
+  </footer>
+</div>

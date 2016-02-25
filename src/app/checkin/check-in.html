@@ -1,4 +1,27 @@
 <div class="check-in">
-
-  all of them
+  <h1>Register</h1>
+  <form name="checkinForm" ng-class="{ invalid: validate }" novalidate>
+    <label for="">Name</label>
+    <input  type="text"
+            placeholder="Name"
+            ng-model="colonist.name"
+            minlength="3"
+            required
+             >
+    <label for="">Age</label>
+    <input  type="number"
+            placeholder="Age"
+            ng-model="colonist.age"
+            required
+            >
+    <select name="jobs" id="jobs"
+            ng-model="colonist.job_id"
+            required
+            >
+      <option value="">- Select an Occupation -</option>
+      <option value="{{ job.id }}"
+              ng-repeat="job in jobs">{{ job.name }}</option>
+    </select>
+    <button ng-click="login($event)"><h1>Check In</h1></button>
+  </form>
 </div>

@@ -5,6 +5,7 @@
 // bower:scss
 // endbower
 
+@import "./main/main";
 @import "./checkin/check-in";
 @import "./encounters/encounters";
 @import "./report/report";
@@ -21,6 +22,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: $red-font;
+  color: white;
+}
+
+button {
+  color: white;
+  background: black;
+  
 }
 
 .browsehappy {
@@ -34,19 +42,6 @@ html, body {
   color:$red-color;
 }
 
-.welcome {
-
-	height: 100vh;
-
-	display:flex;
-	align-items:center;
-	justify-content: center;
-	flex-direction:column;
-
-	img { width: 42%; }
-  h1  { text-align:center; }
-
-}
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject

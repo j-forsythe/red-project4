@@ -1,5 +1,30 @@
 .check-in {
   width: 100vw;
   height: 100vh;
-  background-color: purple;
+  background-color: black;
+  background: linear-gradien();
+  label {
+    display: none;
+  }
 }
+
+@keyframes invalid {
+  0% {
+    outline: 1px solid transparent;
+  }
+  100% {
+    outline: 1px solid red;
+  }
+  }
+
+  .invalid.ng-invalid.ng-dirty {
+    input, select {
+      animation: invalid 1s infinite;
+    }
+    }
+
+    .ng-valid.ng-dirty {
+      input, select {
+      outline: none;
+    }
+      }

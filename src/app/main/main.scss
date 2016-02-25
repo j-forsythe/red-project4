@@ -1,0 +1,50 @@
+
+.welcome {
+
+	height: 100vh;
+
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	flex-direction:column;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/c/cd/Mars_atmosphere_2.jpg') no-repeat;
+
+
+	img { width: 42%; }
+  h1  {
+    text-align:center;
+  }
+
+	.enter {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		background: rgba(237, 68, 68, 1);
+		animation: pulse 2s infinite;
+
+	}
+
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.1),
+		0 0 0 2rem rgba(0, 0, 0, 0.2),
+		0 0 0 3rem rgba(0, 0, 0, 0.3)
+	}
+	50% {
+		box-shadow: 0 0 0 1.25rem rgba(0, 0, 0, 0.1),
+		0 0 0 2.5rem rgba(0, 0, 0, 0.1),
+		0 0 0 4rem rgba(0, 0, 0, 0)
+	}
+	75% {
+		box-shadow: 0 0 0 1.5rem rgba(0, 0, 0, 0.1),
+		0 0 0 3rem rgba(0, 0, 0, 0),
+		0 0 0 5rem rgba(0, 0, 0, 0)
+	}
+	100% {
+		box-shadow: 0 0 0 1.75rem rgba(0, 0, 0, 0),
+		0 0 0 4rem rgba(0, 0, 0, 0),
+		0 0 0 6rem rgba(0, 0, 0, 0)
+	}
+}
