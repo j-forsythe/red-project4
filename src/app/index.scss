@@ -10,11 +10,16 @@
 @import "./encounters/encounters";
 @import "./report/report";
 @import "./report/report-filed";
+@import "./sass/animations";
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100');
 
 $red-color: #ed4343;
-$red-font: 'Roboto Slab', serif;
+$red-font: 'Roboto Slab', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   width:100%;
@@ -26,9 +31,21 @@ html, body {
 }
 
 button {
+  width: 100vw;
   color: white;
   background: black;
-  
+  border: none;
+  margin: 1.5rem auto;
+}
+
+input, select {
+  width: 100%;
+  background: 0 0;
+  color: #7315a1;
+  border: none;
+  border-bottom: 1px solid #7315a1;
+  font-size: 2rem;
+  margin: 1.5rem auto;
 }
 
 .browsehappy {
@@ -40,6 +57,14 @@ button {
 
 .red {
   color:$red-color;
+}
+
+header {
+  height: 10vh;
+}
+.site-container {
+  display: flex;
+  height: 90vh;
 }
 
 

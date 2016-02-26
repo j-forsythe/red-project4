@@ -1,30 +1,28 @@
 .check-in {
-  width: 100vw;
-  height: 100vh;
   background-color: black;
-  background: linear-gradien();
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-content: space-between;
+  width: 100vw;
   label {
     display: none;
   }
+  form {
+    align-self: center;
+    margin: 2rem 1rem;
+  }
 }
 
-@keyframes invalid {
-  0% {
-    outline: 1px solid transparent;
-  }
-  100% {
-    outline: 1px solid red;
-  }
-  }
+.invalid {
+  transition: 0.5s infinite all;
+}
 
-  .invalid.ng-invalid.ng-dirty {
-    input, select {
-      animation: invalid 1s infinite;
-    }
-    }
-
-    .ng-valid.ng-dirty {
-      input, select {
-      outline: none;
-    }
-      }
+.invalid {
+  input, select, textarea {
+  &.ng-invalid {
+    animation: invalid 1s infinite;
+  }
+}
+}

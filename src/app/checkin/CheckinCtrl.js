@@ -6,12 +6,13 @@
     .controller('CheckinCtrl', CheckinCtrl);
 
   /** @ngInject */
-  function CheckinCtrl($scope, $http) {
+  function CheckinCtrl($scope, $rootScope, $state, $http, $cookies) {
     var JOBS_GET_URL = 'https://red-wdp-api.herokuapp.com/api/mars/jobs';
     var COLONIST_POST_URL = 'https://red-wdp-api.herokuapp.com/api/mars/colonists';
     //placeholder object for POST request to /colonist
     $scope.colonist = {};
     $scope.validate = false;
+
 
     // fetch all jobs
     $http({
@@ -23,9 +24,16 @@
       // Handle err
     });
 
+    $cookies.putObject('mars_cookie', undefined);
+
     $scope.login = function(event) {
       event.preventDefault();
 
+      //validate form
+      if ($scope.checkinForm.$invalid) {
+        $scope.validate = true;
+      }
+      else {
       $http({
         method: 'POST',
         url: COLONIST_POST_URL,
@@ -33,25 +41,16 @@
           'colonist' : $scope.colonist
         }
       }).then(function(response){
-        console.log(response);
-      }, function(error){
-        console.log(error);
+          $cookies.putObject('mars_cookie', response.data.colonist);
+          $state.go('encounters');
       });
 
-    //   //validate form
-      if ($scope.validate && event.checkinForm.$invalid) {
-        $scope.validate = false;
-      }
-      else {
-        $scope.validate = true;
-      }
-    };
-    // $scope.checkValid = function() {
-    //    if($scope.colonist) {
-    //      $scope.validate = false;
-    //    }
+    }
 
     };
+
+
+
 
   }
 

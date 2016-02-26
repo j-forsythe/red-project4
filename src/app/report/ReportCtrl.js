@@ -6,35 +6,43 @@
     .controller('ReportCtrl', ReportCtrl);
 
   /** @ngInject */
-  function ReportCtrl($scope, $http) {
+  function ReportCtrl($scope, $state, $http, $cookies, $filter) {
     var ALIENS_GET_URL = 'https://red-wdp-api.herokuapp.com/api/mars/aliens';
     var ALIENS_POST_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
     $scope.aliens = {};
+    $scope.validate = false;
+
+    $scope.report = {
+      colonist_id: $cookies.getObject('mars_cookie').id,
+      date: $filter('date')(new Date(), 'yyyy-MM-dd')
+    };
 
     $http({
       method: 'GET',
       url: ALIENS_GET_URL
     }).then(function(response){
       $scope.aliens = response.data.aliens;
-    }, function(error){
-      console.log(error);
     });
 
     $scope.reportSubmit = function(event) {
       event.preventDefault();
 
+      if ($scope.reportAlien.$invalid) {
+        $scope.validate = true;
+      }
+      else {
     $http({
       method: 'POST',
       url: ALIENS_POST_URL,
       data: {
-        'aliens': $scope.aliens
+        'encounters': $scope.report
       }
     }).then(function(response){
-      console.log(response);
-    }, function(error){
-      console.log(error);
+      $cookies.putObject('mars_cookie', response.data.aliens);
+      $state.go('encounters');
     });
-  };
+  }
+};
 }
 
 })();

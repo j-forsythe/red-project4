@@ -1,6 +1,11 @@
 .encounters {
   color: black;
 
+  ul {
+    height: 50vh;
+overflow: scroll;
+ }
+
   footer {
     color: white;
     background: black;

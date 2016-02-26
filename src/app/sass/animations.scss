@@ -1,0 +1,54 @@
+@keyframes invalid {
+  0% {
+    outline: 1px solid transparent;
+  }
+  100% {
+    outline: 1px solid red;
+  }
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  transition: all 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  perspective: 1000px;
+}
+
+[ui-view].ng-enter {
+  .home {
+    opacity: 0;
+  }
+  .check-in & {
+  transform: rotateY(90deg);
+  }
+}
+
+[ui-view].ng-enter-active {
+  .home {
+    opacity: 1;
+  }
+  .check-in & {
+    // transform: rotateY();
+  }
+}
+
+[ui-view].ng-leave {
+  .home & {
+    opacity: 1;
+  }
+  .check-in & {
+    transform: rotateY(-90deg);
+  }
+}
+
+[ui-view].ng-leave-active {
+  .home & {
+    opacity: 0;
+  }
+  .check-in & {
+    // transform: rotateY();
+
+  }
+}
