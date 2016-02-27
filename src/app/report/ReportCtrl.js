@@ -35,7 +35,7 @@
       method: 'POST',
       url: ALIENS_POST_URL,
       data: {
-        'encounters': $scope.report
+        'encounter': $scope.report
       }
     }).then(function(response){
       $cookies.putObject('mars_cookie', response.data.aliens);

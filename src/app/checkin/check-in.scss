@@ -15,11 +15,17 @@
   }
 }
 
-.invalid {
-  transition: 0.5s infinite all;
+.mars {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: url('http://www.iflscience.com/sites/www.iflscience.com/files/styles/ifls_large/public/blog/%5Bnid%5D/shutterstock_250528078.jpg?itok=bpOCzY3K') center no-repeat;
+  background-size: 100px;
 }
 
+
 .invalid {
+  // transition: 0.5s infinite all;
   input, select, textarea {
   &.ng-invalid {
     animation: invalid 1s infinite;

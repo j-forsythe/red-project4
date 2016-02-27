@@ -1,9 +1,9 @@
 @keyframes invalid {
   0% {
-    outline: 1px solid transparent;
+    box-shadow: 0 transparent;
   }
   100% {
-    outline: 1px solid red;
+    box-shadow: 3px 3px 3px 3px red;
   }
 }
 
@@ -13,24 +13,35 @@
   top: 0;
   left: 0;
   right: 0;
-  perspective: 1000px;
 }
 
 [ui-view].ng-enter {
-  .home {
+  .home & {
     opacity: 0;
   }
   .check-in & {
-  transform: rotateY(90deg);
+    transform: translate3d(0,-100%,0);
+  }
+  .encounters & {
+    transform: translate3d(0,-100%,0);
+  }
+  .report & {
+    transform: translate3d(0,-100%,0);
   }
 }
 
 [ui-view].ng-enter-active {
-  .home {
+  .home & {
     opacity: 1;
   }
   .check-in & {
-    // transform: rotateY();
+    transform: translate3d(0,0,0);
+  }
+  .encounters & {
+    transform: translate3d(0,0,0);
+  }
+  .report & {
+    transform: translate3d(0,0,0);
   }
 }
 
@@ -39,8 +50,15 @@
     opacity: 1;
   }
   .check-in & {
-    transform: rotateY(-90deg);
+    transform: translate3d(0,0,0);
   }
+  .encounters & {
+    transform: translate3d(0,0,0);
+  }
+  .report & {
+    transform: translate3d(0,0,0);
+  }
+
 }
 
 [ui-view].ng-leave-active {
@@ -48,7 +66,13 @@
     opacity: 0;
   }
   .check-in & {
-    // transform: rotateY();
+    transform: translate3d(0,-100%,0);
+  }
+  .encounters & {
+    transform: translate3d(0,-100%,0);
+  }
+  .report & {
+    transform: translate3d(0,-100%,0);
 
   }
 }
