@@ -12,10 +12,10 @@
 @import "./report/report-filed";
 @import "./sass/animations";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100');
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
 
 $red-color: #ed4343;
-$red-font: 'Roboto Slab', sans-serif;
+$red-font: 'Roboto', sans-serif;
 
 * {
   box-sizing: border-box;
@@ -32,26 +32,38 @@ html, body {
 overflow-y: hidden;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+  &:hover {
+    color: #7315a1;
+  }
+}
+
 button {
   width: 100%;
   color: white;
-  background: black;
+  background: transparent;
   border: none;
   margin: 1.5rem auto;
   cursor: pointer;
+  font-family: $red-font;
   &:hover {
-    opacity: 0.5;
+    color: #7315a1;
   }
 }
 
 input, select {
   width: 100%;
-  background: 0 0;
-  color: #7315a1;
+  background: transparent;
+  color: #ffffff;
   border: none;
   border-bottom: 1px solid #7315a1;
   font-size: 1.5rem;
   margin: 1.5rem auto;
+  option {
+    background: black;
+  }
 }
 
 textarea {
@@ -79,9 +91,18 @@ header {
   }
 }
 
+.mars {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: url('assets/mars.jpg') center no-repeat;
+  background-size: 100px;
+  }
+
 .site-container {
   display: flex;
   height: 100vh;
+  background: url('./assets/stars_background.jpg') no-repeat;
 }
 
 

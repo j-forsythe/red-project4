@@ -1,10 +1,16 @@
 .encounters {
-  color: black;
-
+  text-align: center;
   ul {
     height: 50vh;
 overflow-x: hidden;
 list-style: none;
+background: rgba(242, 249, 245, 0.25);
+text-align: left;
+padding: 0 1rem;
+li p{
+  line-height: 1;
+  text-indent: 1rem;
+}
  }
 
   footer {
