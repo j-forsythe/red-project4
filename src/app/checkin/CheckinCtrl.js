@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('red')
-    .controller('CheckinCtrl', CheckinCtrl);
+  .module('red')
+  .controller('CheckinCtrl', CheckinCtrl);
 
   /** @ngInject */
   function CheckinCtrl($scope, $rootScope, $state, $http, $cookies) {
@@ -12,7 +12,6 @@
     //placeholder object for POST request to /colonist
     $scope.colonist = {};
     $scope.validate = false;
-
 
     // fetch all jobs
     $http({
@@ -34,24 +33,18 @@
         $scope.validate = true;
       }
       else {
-      $http({
-        method: 'POST',
-        url: COLONIST_POST_URL,
-        data: {
-          'colonist' : $scope.colonist
-        }
-      }).then(function(response){
+        $http({
+          method: 'POST',
+          url: COLONIST_POST_URL,
+          data: {
+            'colonist' : $scope.colonist
+          }
+        }).then(function(response){
           $cookies.putObject('mars_cookie', response.data.colonist);
           $state.go('encounters');
-      });
-
-    }
-
+        });
+      }
     };
-
-
-
-
   }
 
 })();

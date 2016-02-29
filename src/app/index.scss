@@ -1,7 +1,7 @@
 /**
- *  Do not remove this comments bellow. It's the markers used by wiredep to inject
- *  sass dependencies when defined in the bower.json of your dependencies
- */
+*  Do not remove this comments bellow. It's the markers used by wiredep to inject
+*  sass dependencies when defined in the bower.json of your dependencies
+*/
 // bower:scss
 // endbower
 
@@ -29,7 +29,7 @@ html, body {
   font-family: $red-font;
   color: white;
   overflow-y: scroll;
-overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 a{
@@ -97,7 +97,7 @@ header {
   height: 50px;
   background: url('assets/mars.jpg') center no-repeat;
   background-size: 100px;
-  }
+}
 
 .site-container {
   display: flex;
@@ -107,8 +107,8 @@ header {
 
 
 /**
- *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
- *  all your sass files automatically
- */
+*  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+*  all your sass files automatically
+*/
 // injector
 // endinjector

@@ -3,24 +3,24 @@
     <a ui-sref="home">
       <div class="mars">
       </div>
-        </a>
-        <div>
-          <p> Hello {{ userInfo.name }}, the {{ userInfo.job }}</p>
-        </div>
+    </a>
+    <div>
+      <p> Hello {{ userInfo.name }}, the {{ userInfo.job }}</p>
+    </div>
   </header>
   <h1>Recent Encounters</h1>
-    <p>See an Alien? Report it!</p>
-    <ul >
-      <li ng-repeat="encounter in encounters">
-        {{ encounter.date }} - {{ encounter.atype }}:
-        <p> {{ encounter.action }}</p>
-      </li>
-    </ul>
+  <p>See an Alien? Report it!</p>
+  <ul>
+    <li ng-repeat="encounter in encounters">
+      {{ encounter.date }} - {{ encounter.atype }}:
+      <p> {{ encounter.action }}</p>
+    </li>
+  </ul>
 
   <footer>
     <div>
       <a ui-sref="report">
-      <h2>Report Encounter</h2>
+        <h2>Report Encounter</h2>
       </a>
     </div>
   </footer>

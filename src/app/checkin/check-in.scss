@@ -15,10 +15,9 @@
 }
 
 .invalid {
-  // transition: 0.5s infinite all;
   input, select, textarea {
-  &.ng-invalid {
-    animation: invalid 1s infinite;
+    &.ng-invalid {
+      animation: invalid 1s infinite;
+    }
   }
-}
 }

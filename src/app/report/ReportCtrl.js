@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('red')
-    .controller('ReportCtrl', ReportCtrl);
+  .module('red')
+  .controller('ReportCtrl', ReportCtrl);
 
   /** @ngInject */
   function ReportCtrl($scope, $state, $http, $cookies, $filter) {
@@ -31,18 +31,18 @@
         $scope.validate = true;
       }
       else {
-    $http({
-      method: 'POST',
-      url: ALIENS_POST_URL,
-      data: {
-        'encounter': $scope.report
+        $http({
+          method: 'POST',
+          url: ALIENS_POST_URL,
+          data: {
+            'encounter': $scope.report
+          }
+        }).then(function(response){
+          $cookies.putObject('mars_cookie', response.data.aliens);
+          $state.go('encounters');
+        });
       }
-    }).then(function(response){
-      $cookies.putObject('mars_cookie', response.data.aliens);
-      $state.go('encounters');
-    });
+    };
   }
-};
-}
 
 })();

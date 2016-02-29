@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('red')
-    .controller('EncountersCtrl', EncountersCtrl);
+  .module('red')
+  .controller('EncountersCtrl', EncountersCtrl);
 
   /** @ngInject */
   function EncountersCtrl($scope, $rootScope, $http, $cookies, $state) {

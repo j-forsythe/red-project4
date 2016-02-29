@@ -1,19 +1,15 @@
 
 .welcome {
-
 	width: 100vw;
-
 	display:flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-direction:column;
-
-
 	img { width: 42%; }
-  h1  {
-    text-align:center;
+	h1  {
+		text-align:center;
 		text-transform: uppercase;
-  }
+	}
 
 	.enter {
 		border-radius: 50%;
@@ -23,5 +19,4 @@
 		background-size: 100px;
 		animation: pulse 2s infinite;
 	}
-
 }

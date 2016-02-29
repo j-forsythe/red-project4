@@ -3,10 +3,10 @@
     <a ui-sref="encounters">
       <div class="mars">
       </div>
-        </a>
-        <div>
-          <p> Hello {{ userInfo.name }}, the {{ userInfo.job }}</p>
-        </div>
+    </a>
+    <div>
+      <p> Hello {{ userInfo.name }}, the {{ userInfo.job }}</p>
+    </div>
   </header>
   <h1>Report Encounter</h1>
     <p>Safety on Mars is your responsibility</p>
@@ -14,18 +14,19 @@
           name="reportAlien"
           ng-class="{ 'invalid': validate }"
           novalidate>
-    <select name="alienType" id="alienType"
-            ng-model="report.atype"
-            required>
-      <option value="">Select alien</option>
-      <option value="{{ alien.type }}"
-              ng-repeat="alien in aliens">{{ alien.type }}</option>
-    </select>
-    <textarea   type="text"
-                ng-model="report.action"
-                required
-            /></textarea>
-    <button ng-click="reportSubmit($event)"><h1>Submit Report</h1></button>
+      <select name="alienType" id="alienType"
+              ng-model="report.atype"
+              required>
+        <option value="">Select alien</option>
+        <option value="{{ alien.type }}"
+                ng-repeat="alien in aliens">{{ alien.type }}</option>
+      </select>
+      <textarea   type="text"
+                  ng-model="report.action"
+                  required/>
+      </textarea>
+      <button ng-click="reportSubmit($event)">
+        <h1>Submit Report</h1>
+      </button>
     </form>
-
 </div>
