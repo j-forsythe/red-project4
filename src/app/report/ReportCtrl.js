@@ -6,9 +6,8 @@
   .controller('ReportCtrl', ReportCtrl);
 
   /** @ngInject */
-  function ReportCtrl($scope, $state, $http, $cookies, $filter) {
-    var ALIENS_GET_URL = 'https://red-wdp-api.herokuapp.com/api/mars/aliens';
-    var ALIENS_POST_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
+  function ReportCtrl($scope, $state, $http, $cookies, $filter, MarsApiFactory) {
+
     $scope.aliens = {};
     $scope.validate = false;
 
@@ -17,10 +16,12 @@
       date: $filter('date')(new Date(), 'yyyy-MM-dd')
     };
 
-    $http({
-      method: 'GET',
-      url: ALIENS_GET_URL
-    }).then(function(response){
+    $scope.userInfo = {
+      name: $cookies.getObject('mars_cookie').name,
+      job: $cookies.getObject('mars_cookie').job.name
+    };
+
+    MarsApiFactory.getReport().then(function(response){
       $scope.aliens = response.data.aliens;
     });
 
@@ -31,14 +32,7 @@
         $scope.validate = true;
       }
       else {
-        $http({
-          method: 'POST',
-          url: ALIENS_POST_URL,
-          data: {
-            'encounter': $scope.report
-          }
-        }).then(function(response){
-          $cookies.putObject('mars_cookie', response.data.aliens);
+        MarsApiFactory.postReport($scope.report).then(function(response){
           $state.go('encounters');
         });
       }

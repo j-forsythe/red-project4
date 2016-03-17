@@ -1,0 +1,9 @@
+{
+  "firebase": "mars-colony-app",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
