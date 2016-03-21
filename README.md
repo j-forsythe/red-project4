@@ -1,22 +1,23 @@
 #Mars Colony App
 
+As a Mars Colonist, its your job to report any alien encounter using this App
 
+##Summary
 
-## AngularJS - Seed application
+Project 4 for RED Academy Web Developer Program
 
-This repository contains the basic application scaffold for **Project 4**. <br>
-It is based on the [generator-angular](https://github.com/yeoman/generator-angular)  application boilerplate.
+- Register name, age, and occupation
+- View list of encounters
+- File reports of alien encounter and action taken
 
-To install this project on your computer:
+##Tools and Methods
 
-Step 1 : Create a directory for on your computer and clone this repository:
+- AngularJS
+- Bower
+- Firebase
+- Gulp, SASS
+- REST API
 
-	git clone https://github.com/redacademy/angular-project.git .
+##Experience
 
-Step 2 : From the project's root directory, install the project dependencies:
-
-    npm install && bower install
-
-Step 3 : The project should now be installed. Start the local development server by typing:
-
-	gulp serve
+Building this app helped me to learn AngularJS basics and its functionality. I found this language to be readable and logical to use. I enjoyed learning how to use REST API methods to GET and POST information in the app.
